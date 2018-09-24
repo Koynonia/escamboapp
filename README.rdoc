@@ -4,9 +4,9 @@ Este exemplo foi desenvolvido em sobre a versão 4.2.5 do Rails sobre o Ruby 2.3
 
 * Ruby version 2.3.7
 
-* System dependencies
+* System dependencies Rails 4.2.5
 
-* Configuration
+* Configuration: see Gemfile
 
 * Database creation
 
