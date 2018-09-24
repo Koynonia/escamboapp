@@ -7,6 +7,8 @@ Rails.application.configure do
   # Devise Config:
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
  
+ #Foreman Show Out
+ $stdout.sync = true
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
