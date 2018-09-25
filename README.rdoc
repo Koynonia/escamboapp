@@ -7,16 +7,17 @@ Este exemplo foi desenvolvido em sobre a versão 4.2.5 do Rails sobre o Ruby 2.3
 * System dependencies
   * Rails 4.2.5
   * ImageMagick (https://www.imagemagick.org)
-	```
+
+    ```shell
 	sudo apt-get update
 	sudo apt-get install imagemagick libmagickwand-dev
-	```
+   ```
 
  * Graphviz (https://www.graphviz.org) - Apenas para Ambiente de Desenvolvimento
-	```
+    ```shell
 	sudo apt-get update
 	sudo apt-get install graphviz
-	```
+   ```
 
 * Configuration: see Gemfile
 
