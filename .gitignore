@@ -19,3 +19,6 @@
 # Ignore all .DS_Store files (Mac)
 *.DS_Store
 /.gtm/
+
+# Ignore rvm
+rvm.sh
