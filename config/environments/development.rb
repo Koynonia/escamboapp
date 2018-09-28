@@ -4,6 +4,9 @@ Rails.application.configure do
   # Better Errors Config
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
 
+  # stop error message 'Cannot render console from 10.0.2.2!'
+  config.web_console.whiny_requests = false
+
   # Devise Config:
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
  
