@@ -28,7 +28,9 @@ categories = [
 
 	puts "Cadastrando o ADMINISTRADOR padrão..."
 
-	Admin.create!(email: "admin@admin.com", 
+	Admin.create!(
+		name: "Admnistrador Geral",
+		email: "admin@admin.com", 
 		password: "123456",
 		password_confirmation: "123456")
 	
