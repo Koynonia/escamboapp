@@ -23,6 +23,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
 end
 
+# Help ActiveRecord::Enum feature to work fine with I18n and simple_form
+gem 'enum_help'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
