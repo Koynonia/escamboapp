@@ -2,7 +2,7 @@ class Backoffice::AdminsController < BackofficeController
 	before_action :set_admin, only: [:edit, :update, :destroy]
 
 	def index
-		@admin = Admin.with_full_access
+		@admin = Admin.with_restricted_access
 	end
 
 	def create
