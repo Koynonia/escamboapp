@@ -25,6 +25,8 @@ end
 
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form
 gem 'enum_help'
+# Minimal authorization through OO design and pure Ruby classes
+gem 'pundit'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
