@@ -1,8 +1,12 @@
 class Backoffice::AdminsController < BackofficeController
 	before_action :set_admin, only: [:edit, :update, :destroy]
+	after_action :verify_authorized, only: :new
+	after_action :verify_policy_scoped, only: :index
 
 	def index
-		@admin = Admin.with_restricted_access
+		#@admin = Admin.all
+		#@admin = Admin.with_restricted_access
+		@admin = policy_scope(Admin)
 	end
 
 	def create
@@ -33,7 +37,7 @@ class Backoffice::AdminsController < BackofficeController
 	end
 
 	def destroy
-		admin_nome = @admin.nome
+		admin_name = @admin.name
 		
 		if @admin.destroy
 			redirect_to  backoffice_admins_path, 
