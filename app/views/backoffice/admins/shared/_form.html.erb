@@ -27,20 +27,16 @@
 				<%= f.label :email %>
 				<%= f.text_field :email, class:"form-control", placeholder:"#{t('placeholder.email')}" %>
 			</div>
+			<% if policy(@admin).edit? %>
 			<div class="form-group">
 				<%= f.label :role %>
-				<!-- outro modo
-				<%#= f.collection_radio_buttons :role, Admin.roles_i18n, :first, :last do |crb| %>
-					 <div class="radio"><%#= crb.label { crb.radio_button + crb.text } %></div>
-				<%# end %>
-				fim -->
-
 				<%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
-					<div class="radio">
-						<%= b.label { b.radio_button + b.text } %>
-					</div>
+				<div class="radio">
+					<%= b.label { b.radio_button + b.text } %>
+				</div>
 				<% end %>
 			</div>
+			<% end %>
 			<div class="form-group">
 				<%= f.label :password %>
 				<%= f.text_field :password, type:"password", class:"form-control", placeholder:"#{t('placeholder.password')}" %>
