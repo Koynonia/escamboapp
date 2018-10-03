@@ -10,7 +10,7 @@ class Backoffice::CategoriesController < BackofficeController
 		
 		unless @category.errors.any?
 			redirect_to  backoffice_categories_path, 
-			notice: "A categoria #{@category.description} foi cadastrada com sucesso!"
+			notice: I18n.t('messages.created_with', item: @category.description)
 		else
 			render :new
 		end
@@ -26,7 +26,7 @@ class Backoffice::CategoriesController < BackofficeController
 	def update
 		if @category.update(params_category)
 			redirect_to  backoffice_categories_path, 
-			notice: "A categoria #{@category.description} foi atualizada com sucesso!"
+			notice: I18n.t('messages.updated_with', item: @category.description)
 		else
 			render :edit
 		end

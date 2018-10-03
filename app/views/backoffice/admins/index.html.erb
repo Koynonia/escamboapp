@@ -1,11 +1,16 @@
-<h1 class="page-header">Adminstradores</h1>
+<h1 class="page-header"><%= @admin.model_name.human(count: 2) %></h1>
+
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Administradores cadastrados
-		<%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
-		<i class="fa fa-plus"></i>
+		<%= t('messages.listing', model: @admin.model_name.human(count: 2)) %>
+		<% if policy(@admin).new? %>
+			<%= link_to new_backoffice_admin_path, 
+			class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
+			<i class="fa fa-plus"></i>
+			<% end %>
 		<% end %>
 	</div>
+
 	<!-- /.panel-heading -->
 	<div class="panel-body">
 		<div class="table-responsive">

@@ -9,7 +9,7 @@ class Backoffice::AdminsController < BackofficeController
 		@admin = Admin.new(params_admin)
 		if @admin.save
 			redirect_to  backoffice_admins_path, 
-			notice: "O administrador #{@admin.nome} foi cadastrado com sucesso!"
+			notice: I18n.t('messages.created_with', item: @admin.name)
 		else
 			render :new
 		end
@@ -26,7 +26,7 @@ class Backoffice::AdminsController < BackofficeController
 	def update
 		if @admin.update(params_admin)
 			redirect_to  backoffice_admins_path, 
-			notice: "O administrador #{@admin.name} foi atualizado com sucesso!"
+			notice:  I18n.t('messages.updated_with', item: @admin.name)
 		else
 			render :edit
 		end
@@ -37,7 +37,7 @@ class Backoffice::AdminsController < BackofficeController
 		
 		if @admin.destroy
 			redirect_to  backoffice_admins_path, 
-			notice: "O administrador #{admin_nome} foi removido com sucesso!"
+			notice: I18n.t('messages.destroyed_with', item: admin_name)
 		else
 			render :index
 		end
