@@ -20,22 +20,36 @@
 		<div class="col-lg-6">
 			<%= form_for([:backoffice, @admin]) do |f| %>
 			<div class="form-group">
-				<label>Nome</label>
-				<%= f.text_field :name, class:"form-control", placeholder:"Nome do administrador" %>
+				<%= f.label :name %>
+				<%= f.text_field :name, class:"form-control", placeholder:"#{t('placeholder.name')}" %>
 			</div>
 			<div class="form-group">
-				<label>E-mail</label>
-				<%= f.text_field :email, class:"form-control", placeholder:"Email do administrador" %>
+				<%= f.label :email %>
+				<%= f.text_field :email, class:"form-control", placeholder:"#{t('placeholder.email')}" %>
 			</div>
 			<div class="form-group">
-				<label>Senha</label>
-				<%= f.text_field :password, type:"password", class:"form-control", placeholder:"Senha" %>
+				<%= f.label :role %>
+				<!-- outro modo
+				<%#= f.collection_radio_buttons :role, Admin.roles_i18n, :first, :last do |crb| %>
+					 <div class="radio"><%#= crb.label { crb.radio_button + crb.text } %></div>
+				<%# end %>
+				fim -->
+
+				<%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
+					<div class="radio">
+						<%= b.label { b.radio_button + b.text } %>
+					</div>
+				<% end %>
 			</div>
 			<div class="form-group">
-				<label>Confirmação de Senha</label>
-				<%= f.text_field :password_confirmation, type:"password", class:"form-control", placeholder:"Confirmação da senha" %>
+				<%= f.label :password %>
+				<%= f.text_field :password, type:"password", class:"form-control", placeholder:"#{t('placeholder.password')}" %>
 			</div>
-			<button type="submit" class="btn btn-default">Salvar</button>
+			<div class="form-group">
+				<%= f.label :password_confirmation %>
+				<%= f.text_field :password_confirmation, type:"password", class:"form-control", placeholder:"#{t('placeholder.password_confirm')}" %>
+			</div>
+			<button type="submit" class="btn btn-default"><%= t('buttons.save') %></button>
 			<% end %>
 		</div>
 	</div>

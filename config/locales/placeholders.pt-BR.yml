@@ -1,0 +1,7 @@
+'pt-BR':
+  placeholder:
+    search_for: Pesquisar por...
+    name: Digite o nome completo
+    email: Digite o e-mail
+    password: Digite a Senha
+    password_confirm: Confirme a Senha
