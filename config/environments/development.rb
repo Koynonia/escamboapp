@@ -8,7 +8,11 @@ Rails.application.configure do
   config.web_console.whiny_requests = false
 
   # Devise Config:
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Mailcatcher Config:
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
  
  #Foreman Show Out
  $stdout.sync = true

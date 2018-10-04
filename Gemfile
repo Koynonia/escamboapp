@@ -71,5 +71,7 @@ group :development do
   gem 'spring'
   # A library for generating fake data such names, addresses, and phones numbers
   gem 'faker'
+  # Catches mail and serves it through a dream.
+  gem 'mailcatcher'
 end
 
