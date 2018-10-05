@@ -1,9 +1,0 @@
-def saudacao
-	if block_given?
-		yield("Olá",3)
-	else
-		puts "O bloco não foi passado!"
-	end
-end
-
-saudacao { |str,num| puts "#{str} Fernando! " * num }

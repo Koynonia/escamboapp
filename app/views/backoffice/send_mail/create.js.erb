@@ -5,5 +5,5 @@ $(function(){
   $('#subject-text').val('');
   $('#message-text').val('');
    // Show Message
-  $.notify( '<%=t('messages.email_delivered') %>', "success")
+  $.notify( '<%= @notify_message %>', "<%= @notify_flag %>")
 });
