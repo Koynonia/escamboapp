@@ -3,6 +3,7 @@ class Site::HomeController < ApplicationController
   
   def index
   	#raise "teste erro!"
-  	@categories = Category.all
+  	@categories = Category.order(:description)
+  	@ads = Ad.limit(5).order(created_at: :desc)
   end
 end

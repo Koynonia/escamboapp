@@ -75,5 +75,7 @@ group :development do
   gem 'mailcatcher'
   # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
   gem 'lerolero_generator'
+  # A mini view framework for console/irb that's easy to use, even while under its influence. Console goodies include a no-wrap table, auto-pager, tree and menu. http://tagaholic.me/hirb/
+  gem 'hirb'
 end
 
