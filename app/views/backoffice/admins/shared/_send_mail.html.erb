@@ -6,21 +6,25 @@
         <h4 class="modal-title" id="sendMaiModalLabel"><%= t('labels.new_message') %></h4>
       </div>
       <div class="modal-body">
-        <form>
+        <%=form_tag backoffice_send_mail_index_path, remote: true do %>
           <div class="form-group">
-            <label for="recipient-name" class="control-label"><%= t('labels.recipient') %></label>
-            <input type="text" class="form-control" id="recipient-name" disabled="disabled">
+            <label for="recipient-email" class="control-label"><%= t('labels.recipient') %></label>
+            <%= text_field :send_email, :recipient_email, class: 'form-control', id: 'recipient-email', readonly: true %>
+          </div>
+          <div class="form-group">
+            <label for="subject-text" class="control-label"><%= t('labels.subject') %></label>
+            <%= text_field :send_email, :subject_text, class: 'form-control', id: 'subject-text' %>
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label"><%= t('labels.message') %>:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <%= text_area :send_email, :message_text, class: 'form-control', id: 'message-text' %>
           </div>
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('buttons.close') %></button>
-        <button type="button" class="btn btn-primary"><%= t('buttons.send_message') %></button>
+        <%= submit_tag t('buttons.send_message'), class: "btn btn-primary", id: 'send_message' %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>

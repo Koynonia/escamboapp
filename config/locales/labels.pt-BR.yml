@@ -12,7 +12,7 @@
     email: E-mail
     password: Senha
     message: Mensagem
-    new_message: Enviar mensagem para
+    new_message: Nova mensagem
     send_message_to: Enviar mensagem para %{name}
     recipient: Destinatário
     subject: Assunto

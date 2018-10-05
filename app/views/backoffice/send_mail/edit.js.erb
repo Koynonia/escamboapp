@@ -1,8 +1,20 @@
 $(function(){
-	$('h4.modal-title').text('<%= t('labels.new_message') %> <%= @admin.name %>');
-	$('#recipient-name').val('<%= @admin.email %>');
-	$('#sendMailModal').modal();
-	$('#sendMailModal').on('shown.bs.modal', function(){
-		$('#message-text').focus();
+	let $sendMailModal = $('#sendMailModal');
+
+	// Setting name and email on Form
+	$('h4.modal-title').text('<%= t('labels.send_message_to', name: @admin.name) %>');
+	$('#recipient-email').val('<%= @admin.email %>');
+
+	// Shows Modal
+	$sendMailModal.modal();
+
+	// Set focus on 'Message Text' after modal is shown
+	$sendMailModal.on('shown.bs.modal', function(){
+		$('#subject-text').focus();
 	});
+
+	// Disables Button 'Send Message'
+	//$('#send_message').click(function(){
+	//$(this).prop('disabled', true);
+	//});
 });
