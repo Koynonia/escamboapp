@@ -10,9 +10,11 @@ class Backoffice::AdminsController < BackofficeController
 	end
 
 	def create
+
 		@admin = Admin.new(params_admin)
+
 		if @admin.save
-			redirect_to  backoffice_admins_path, 
+			redirect_to backoffice_admins_path, 
 			notice: I18n.t('messages.created_with', item: @admin.name)
 		else
 			render :new
@@ -25,12 +27,13 @@ class Backoffice::AdminsController < BackofficeController
 	end
 
 	def edit
+		# Uses the before_action to set the admin.
 	end
 
 	def update
 		if @admin.update(params_admin)
 			AdminMailer.update_email(current_admin, @admin).deliver_now
-			redirect_to  backoffice_admins_path, 
+			redirect_to backoffice_admins_path, 
 			notice:  I18n.t('messages.updated_with', item: @admin.name)
 		else
 			render :edit
@@ -42,7 +45,7 @@ class Backoffice::AdminsController < BackofficeController
 		admin_name = @admin.name
 		
 		if @admin.destroy
-			redirect_to  backoffice_admins_path, 
+			redirect_to backoffice_admins_path, 
 			notice: I18n.t('messages.destroyed_with', item: admin_name)
 		else
 			render :index
@@ -56,14 +59,14 @@ class Backoffice::AdminsController < BackofficeController
 	end
 
 	def params_admin
-
-		pwd = params[:admin][:password]
-		pwdc = params[:admin][:password_confirmation]
-
-		if pwd.blank? && pwdc.blank?
+		if password_blank? 
 			params[:admin].except!(:password, :password_confirmation)
 		end
-
 		params.require(:admin).permit(policy(@admin).permitted_attributes)
+	end
+
+	def password_blank?
+		params[:admin][:password].blank? && 
+		params[:admin][:password_confirmation].blank?
 	end
 end
