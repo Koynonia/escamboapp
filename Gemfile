@@ -29,6 +29,8 @@ gem 'enum_help'
 gem 'pundit'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
