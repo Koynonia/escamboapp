@@ -5,7 +5,7 @@ Este exemplo foi desenvolvido usando a versão 4.2.5 do Rails sobre o Ruby 2.3.7
 
 
 
-*Dependências do Sistema*
+**Dependências do Sistema**
 
 - Ruby version 2.3.7
 
@@ -23,15 +23,15 @@ Este exemplo foi desenvolvido usando a versão 4.2.5 do Rails sobre o Ruby 2.3.7
      sudo apt-get install graphviz
      ```
 
-*Configuração: ver o Gemfile*
+**Configuração: ver o Gemfile**
 
-*Criação da Base de Dados*
+**Criação da Base de Dados**
 
-*Inicialização da Base de Dados*
+**Inicialização da Base de Dados**
 
-*Como rodar a aplicação em modo teste*
+**Como rodar a aplicação em modo teste**
 
-*Serviços (job queues, cache servers, search engines, etc.)*
+**Serviços (job queues, cache servers, search engines, etc.)**
 
-*Instrução de Deployment*
+**Instrução de Deployment**
 
