@@ -15,7 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
-/public/system
+/public/system/*
 
 # Ignore all .DS_Store files (Mac)
 *.DS_Store

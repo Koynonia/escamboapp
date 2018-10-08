@@ -6,8 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-puts "Cadastrando as CATEGORIAS..."
-
+puts "[+] CATEGORIAS         |  Cadastrando..."
 categories = [
 	"Animais e acessórios", 
 	"Esportes", 
@@ -23,16 +22,23 @@ categories = [
 	categories.each do |category|
 		Category.find_or_create_by(description:category)
 	end
-	
-	puts "CATEGORIAS cadastradas com sucesso!"
+puts "[!] CATEGORIAS         |  Sucesso!"
 
-	puts "Cadastrando o ADMINISTRADOR padrão..."
+puts "[+] ADM. PADRÃO        |  Cadastrando..."
+Admin.create!(
+	name: "Admnistrador Geral",
+	email: "admin@admin.com", 
+	password: "123456",
+	password_confirmation: "123456", 
+	role:0
+	)
+puts "[!] ADM. PADRÃO        |  Sucesso!"
 
-	Admin.create!(
-		name: "Admnistrador Geral",
-		email: "admin@admin.com", 
-		password: "123456",
-		password_confirmation: "123456", 
-		role:0)
-	
-	puts "ADMNISTRADOR padrão cadastrado com sucesso!"
+puts "[+] MEMBRO PADRÃO      |  Cadastrando..."
+Member.create!(
+	#name: "Membro Padrão",
+	email: "membro@membro.com", 
+	password: "123456",
+	password_confirmation: "123456"
+	)
+puts "[!] MEMBRO PADRÃO      |  Sucesso!"

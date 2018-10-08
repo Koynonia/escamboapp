@@ -1,8 +1,25 @@
 namespace :utils do
 
+	desc "Setup Development"
+	task setup_dev: :environment do
+		puts "Executando o setup para DESENVOLVIMENTO:"
+		puts
+		puts "[-] BANCO DE DADOS     |  Apagando... #{%x(rake db:drop)}"
+		puts "[+] BANCO DE DADOS     |  Criando... #{%x(rake db:create)}"
+		%x(rake db:migrate)
+		puts "[!] BANCO DE DADOS     |  Sucesso!" 
+		puts %x(rake db:seed)
+		puts %x(rake utils:generate_admins)
+		puts %x(rake utils:generate_members)
+		puts %x(rake utils:generate_ads)
+		puts
+		puts "Setup completado com sucesso!"
+		puts
+	end
+
 	desc "Cria Administradores Fake"
 	task generate_admins: :environment do
-		puts "Cadastrando ADMINISTRADORES..."
+		puts "[+] ADMINISTRADORES    |  Cadastrando..."
 
 		10.times do
 			Admin.create!(
@@ -13,12 +30,12 @@ namespace :utils do
 				role: [0,0,1,1,1].sample
 				)
 		end
-		puts "ADMINISTRADORES cadastrados com sucesso!"
+		puts "[!] ADMINISTRADORES    |  Sucesso!"
 	end
 
 	desc "Cria Membros Fake"
 	task generate_members: :environment do
-		puts "Cadastrando MEMBROS..."
+		puts "[+] MEMBROS            |  Cadastrando..."
 
 		100.times do
 			Member.create!(
@@ -28,12 +45,12 @@ namespace :utils do
 				password_confirmation: "123456"
 				)
 		end
-		puts "MEMBROS cadastrados com sucesso!"
+		puts "[!] MEMBROS            |  Sucesso!"
 	end
 
 	desc "Cria Anúncios Fake"
 	task generate_ads: :environment do
-		puts "Cadastrando ANÚNCIOS..."
+		puts "[+] ANÚNCIOS           |  Cadastrando..."
 
 		100.times do
 			Ad.create!(
@@ -50,7 +67,7 @@ namespace :utils do
 				)
 		end
 
-		puts "ANÚNCIOS cadastrados com sucesso!"
+		puts "[!] ANÚNCIOS           |  Sucesso!"
 	end
 
 end
