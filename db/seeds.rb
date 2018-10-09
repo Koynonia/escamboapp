@@ -22,7 +22,7 @@ categories = [
 	categories.each do |category|
 		Category.find_or_create_by(description:category)
 	end
-puts "[!] CATEGORIAS         |  Sucesso!"
+puts "[!] CATEGORIAS         |  => Sucesso!"
 
 puts "[+] ADM. PADRÃO        |  Cadastrando..."
 Admin.create!(
@@ -32,7 +32,7 @@ Admin.create!(
 	password_confirmation: "123456", 
 	role:0
 	)
-puts "[!] ADM. PADRÃO        |  Sucesso!"
+puts "[!] ADM. PADRÃO        |  => Sucesso!"
 
 puts "[+] MEMBRO PADRÃO      |  Cadastrando..."
 Member.create!(
@@ -41,4 +41,4 @@ Member.create!(
 	password: "123456",
 	password_confirmation: "123456"
 	)
-puts "[!] MEMBRO PADRÃO      |  Sucesso!"
+puts "[!] MEMBRO PADRÃO      |  => Sucesso!"

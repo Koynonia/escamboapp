@@ -2,12 +2,16 @@ namespace :utils do
 
 	desc "Setup Development"
 	task setup_dev: :environment do
+		images_path = Rails.root.join('public', 'system')
+
 		puts "Executando o setup para DESENVOLVIMENTO:"
 		puts
+		puts "[-] IMAGENS            |  Apagando... #{%x(rm -rf #{images_path})}"
+		puts "[!] IMAGENS            |  => Sucesso!"
 		puts "[-] BANCO DE DADOS     |  Apagando... #{%x(rake db:drop)}"
 		puts "[+] BANCO DE DADOS     |  Criando... #{%x(rake db:create)}"
 		%x(rake db:migrate)
-		puts "[!] BANCO DE DADOS     |  Sucesso!" 
+		puts "[!] BANCO DE DADOS     |  => Sucesso!" 
 		puts %x(rake db:seed)
 		puts %x(rake utils:generate_admins)
 		puts %x(rake utils:generate_members)
@@ -30,7 +34,7 @@ namespace :utils do
 				role: [0,0,1,1,1].sample
 				)
 		end
-		puts "[!] ADMINISTRADORES    |  Sucesso!"
+		puts "[!] ADMINISTRADORES    |  => Sucesso!"
 	end
 
 	desc "Cria Membros Fake"
@@ -45,7 +49,7 @@ namespace :utils do
 				password_confirmation: "123456"
 				)
 		end
-		puts "[!] MEMBROS            |  Sucesso!"
+		puts "[!] MEMBROS            |  => Sucesso!"
 	end
 
 	desc "Cria Anúncios Fake"
@@ -67,7 +71,7 @@ namespace :utils do
 				)
 		end
 
-		puts "[!] ANÚNCIOS           |  Sucesso!"
+		puts "[!] ANÚNCIOS           |  => Sucesso!"
 	end
 
 end
