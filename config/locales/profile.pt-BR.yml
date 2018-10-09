@@ -1,6 +1,7 @@
 'pt-BR':
-  profile_menu:
+  profile:
     dashboard: Dashboard
     my_ads: Meus anúncios
     new_ad: Novo anúncio
     my_data: Meus dados
+    edit_ads: Editando anúncio
