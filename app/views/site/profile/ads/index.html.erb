@@ -1,0 +1,22 @@
+<h1><%= t('profile_menu.my_ads') %></h1>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th><%= @ads.model.human_attribute_name("id") %></th>
+			<th><%= @ads.model.human_attribute_name("image") %></th>
+			<th><%= @ads.model.human_attribute_name("description") %></th>
+			<th><%= @ads.model.human_attribute_name("price") %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @ads.each do |ad| %>
+			<tr>
+				<th scope="row"><%= ad.id %></th>
+				<td><%= image_tag ad.picture(:thumb) %></td>
+				<td><%= ad.description %></td>
+				<td><%= humanized_money_with_symbol ad.price %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
