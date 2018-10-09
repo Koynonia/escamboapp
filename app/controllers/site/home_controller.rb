@@ -1,8 +1,5 @@
-class Site::HomeController < ApplicationController
-  layout "site"
-  
+class Site::HomeController < SiteController
   def index
-  	#raise "teste erro!"
   	@categories = Category.order_by_description
   	@ads = Ad.last_six
   end
