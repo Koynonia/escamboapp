@@ -6,6 +6,7 @@
     show: Mostrar
     edit: Editar
     destroy: Apagar
+    update: Atualizar
     back: Voltar
     home: Início
     log_in: Entrar

@@ -4,7 +4,7 @@ namespace :dev do
 	task setup: :environment do
 		images_path = Rails.root.join('public', 'system')
 
-		puts "Executando o setup para DESENVOLVIMENTO:"
+		puts ">> Executando o setup para DESENVOLVIMENTO:"
 		puts
 		puts "[-] IMAGENS            |  Apagando... #{%x(rm -rf #{images_path})}"
 		puts "[!] IMAGENS            |  ==> Sucesso!"
@@ -17,7 +17,7 @@ namespace :dev do
 		puts %x(rake dev:generate_members)
 		puts %x(rake dev:generate_ads)
 		puts
-		puts "Setup completado com sucesso!"
+		puts ">> Setup completado com sucesso!"
 		puts
 	end
 
@@ -59,7 +59,7 @@ namespace :dev do
 		5.times do
 			Ad.create!(
 				title: Faker::Lorem.sentence([2,3,4,5].sample), 
-				description: LeroleroGenerator.paragraph(Random.rand(3)), 
+				description: LeroleroGenerator.paragraph(Random.rand(2)), 
 				member: Member.first, 
 				category: Category.all.sample, 
 				price: "#{Random.rand(500)},#{Random.rand(99)}", 
@@ -74,7 +74,7 @@ namespace :dev do
 		100.times do
 			Ad.create!(
 				title: Faker::Lorem.sentence([2,3,4,5].sample), 
-				description: LeroleroGenerator.paragraph(Random.rand(3)), 
+				description: LeroleroGenerator.paragraph(Random.rand(2)), 
 				member: Member.all.sample, 
 				category: Category.all.sample, 
 				price: "#{Random.rand(500)},#{Random.rand(99)}", 
