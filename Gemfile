@@ -31,6 +31,8 @@ gem 'pundit'
 gem 'money-rails'
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.0.0'
+# JQuery UI for the Rails asset pipeline
+gem 'jquery-ui-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
