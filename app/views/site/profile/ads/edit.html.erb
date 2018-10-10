@@ -1,7 +1,7 @@
 <h1><%= t('profile.edit_ads') %></h1>
 <br>
 
-<%= form_for([:site, :profile, @ad]) do |f| %>
+<%= form_for([:site, :profile, @ad], html: { multipart: true }) do |f| %>
 
 <div class="container">
 	<div class="row">
