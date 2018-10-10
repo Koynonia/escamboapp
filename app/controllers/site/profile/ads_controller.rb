@@ -45,7 +45,8 @@ class Site::Profile::AdsController < Site::ProfileController
 			:category_id, 
 			:price, 
 			:description, 
-			:picture
+			:picture, 
+			:finish_date
 			)
 	end
 end

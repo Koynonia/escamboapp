@@ -59,10 +59,11 @@ namespace :dev do
 		5.times do
 			Ad.create!(
 				title: Faker::Lorem.sentence([2,3,4,5].sample), 
-				description: LeroleroGenerator.paragraph(Random.rand(2)), 
+				description: LeroleroGenerator.paragraph([1,2].sample), 
 				member: Member.first, 
 				category: Category.all.sample, 
 				price: "#{Random.rand(500)},#{Random.rand(99)}", 
+				finish_date: Date.today + Random.rand(90), 
 				picture: File.new(Rails.root.join(
 					'public', 
 					'templates', 
@@ -74,10 +75,11 @@ namespace :dev do
 		100.times do
 			Ad.create!(
 				title: Faker::Lorem.sentence([2,3,4,5].sample), 
-				description: LeroleroGenerator.paragraph(Random.rand(2)), 
+				description: LeroleroGenerator.paragraph([1,2].sample), 
 				member: Member.all.sample, 
 				category: Category.all.sample, 
 				price: "#{Random.rand(500)},#{Random.rand(99)}", 
+				finish_date: Date.today + Random.rand(90), 
 				picture: File.new(Rails.root.join(
 					'public', 
 					'templates', 
