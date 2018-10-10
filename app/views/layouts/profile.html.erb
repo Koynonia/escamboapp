@@ -40,15 +40,16 @@
     		<div id="sidebar-wrapper">
     			<ul class="sidebar-nav">
     				<li class="sidebar-brand">
-    					<a href="#">
-    						Start Bootstrap
-    					</a>
+    					<%= link_to t('profile.home'), site_home_path %>
     				</li>
     				<li>
-    					<%= link_to "Dashboard", site_profile_dashboard_index_path %>
+    					<%= link_to t('profile.dashboard'), site_profile_dashboard_index_path %>
     				</li>
     				<li>
-    					<%= link_to "Meus anúncios", site_profile_ads_path %>
+    					<%= link_to t('profile.my_ads'), site_profile_ads_path %>
+    				</li>
+    				<li>
+    					<%= link_to t('profile.new_ad'), new_site_profile_ad_path %>
     				</li>
     			</ul>
     		</div>
@@ -66,6 +67,15 @@
     		<!-- /#page-content-wrapper -->
     	</div>
     	<!-- /#wrapper -->
+
+    	<% if notice %>
+    	<%= javascript_tag "$.notify('#{notice}', 'success');" %>
+    	<% end %>
+    	<% if alert %>
+    	<script>
+    		$.notify("<%= alert %>", "error");
+    	</script>
+    	<% end %>
     </body>
 
     </html>
