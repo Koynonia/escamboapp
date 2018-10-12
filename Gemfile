@@ -17,10 +17,12 @@ gem 'bootstrap_sb_admin_base_v2'
 source 'https://rails-assets.org' do
 	# https://github.com/twbs/bootstrap
 	gem 'rails-assets-bootstrap', '3.3.7'
-  # A simple, versatile notification library
-  gem 'rails-assets-notifyjs'
+  # Bootstrap Notify, versatile notification library
+  gem 'rails-assets-bootstrap.growl'
   # Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework http://bootboxjs.com
   gem 'rails-assets-bootbox'
+  # Animate CSS
+  gem 'rails-assets-animate-css'
 end
 
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form
