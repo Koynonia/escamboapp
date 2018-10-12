@@ -88,7 +88,7 @@ namespace :dev do
 				)
 		end
 
-		puts "[!] ANÚNCIOS           |  => Sucesso!"
+		puts "[!] ANÚNCIOS           |  ==> Sucesso!"
 	end
 
 end
