@@ -1,17 +1,21 @@
 <!-- Page Content -->
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+
+		<div id="home-sidebar" class="col-md-3">
 			<p class="lead"><%= t('menu_item.categories') %></p>
 			<div class="list-group">
-				<% @categories.each do |category|  %>
+				<% @categories.each do |category| %>
 				<a href="#" class="list-group-item"><%= category.description %></a>
 				<% end %>
 			</div>
 		</div>
-		<div class="col-md-9">
+
+		<div id="home-detail" class="col-md-9">
+
 			<div class="row carousel-holder">
 				<div class="col-md-12">
+
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -36,8 +40,10 @@
 							<span class="glyphicon glyphicon-chevron-right"></span>
 						</a>
 					</div>
+
 				</div>
 			</div>
+
 			<div class="row">
 				<% @ads.each do |ad| %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
@@ -46,7 +52,7 @@
 						<div class="caption">
 							<h4 class="pull-right"><%= humanized_money_with_symbol ad.price %></h4>
 							<h4>
-								<%= link_to truncate(ad.title, length: 17), site_ad_detail_path(ad) %>
+								<%= link_to truncate(ad.title, length: 18), site_ad_detail_path(ad), remote: true %>
 							</h4>
 							<p><%= truncate(ad.description, length: 100) %></p>
 						</div>
@@ -64,7 +70,9 @@
 				</div>
 				<% end %>
 			</div>
+
 		</div>
+
 	</div>
 </div>
 <!-- /.container -->

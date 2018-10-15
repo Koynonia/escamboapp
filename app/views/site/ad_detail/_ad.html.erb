@@ -1,0 +1,36 @@
+<div class="card mt-4">
+	<%= image_tag @ad.picture.url(:large), class: "card-img-top img-fluid", alt: "#{@ad.title}" %>
+	<div class="card-body">
+		<h3 align="right"><%= humanized_money_with_symbol @ad.price %></h3>
+		<h3 class="card-title" style="padding-top: 10px;"><%= @ad.title %></h3>
+		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+		4.0 stars
+		<p class="card-text" style="padding-top: 30px;"><%= @ad.description %></p>
+	</div>
+</div>
+<!-- /.card -->
+
+<div class="card card-outline-secondary my-4" style="padding-top: 50px;">
+	<div class="card-header">
+		<a href="#" class="btn btn-success pull-right">Leave a Review</a>
+		<h4 style="padding-bottom: 35px;">Product Reviews</h4>
+	</div>
+	<div class="card-body">
+		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+		4.0 stars
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+		<small class="text-muted">Posted by Anonymous on 3/1/17</small>
+		<hr>
+		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+		4.0 stars
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+		<small class="text-muted">Posted by Anonymous on 3/1/17</small>
+		<hr>
+		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+		4.0 stars
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+		<small class="text-muted">Posted by Anonymous on 3/1/17</small>
+		<hr>
+	</div>
+</div>
+<!-- /.card -->
