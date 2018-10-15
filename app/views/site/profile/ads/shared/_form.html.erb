@@ -1,5 +1,5 @@
 <%= content_for :javascripts do %>
-	<%= javascript_include_tag 'site/profile/ads' %>
+<%= javascript_include_tag 'site/profile/ads' %>
 <% end %>
 
 <% if @ad.errors.any? %>
@@ -79,6 +79,21 @@
 					<div class="form-group">
 						<%= f.label :description %>
 						<%= f.text_area :description, class: "form-control", rows: 5 %>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-8">
+					<div class="form-group">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								<%= t('labels.preview') %>
+							</div>
+							<div class="panel-body">
+								<%= md_to_html @ad.description %>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

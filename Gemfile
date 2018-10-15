@@ -81,6 +81,8 @@ group :development do
   gem 'spring'
   # A library for generating fake data such names, addresses, and phones numbers
   gem 'faker'
+  # Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
   # Catches mail and serves it through a dream.
   gem 'mailcatcher'
   # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.

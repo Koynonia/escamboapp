@@ -5,7 +5,7 @@
 		<h3 class="card-title" style="padding-top: 10px;"><%= @ad.title %></h3>
 		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
 		4.0 stars
-		<p class="card-text" style="padding-top: 30px;"><%= @ad.description %></p>
+		<p class="card-text" style="padding-top: 30px;"><%= md_to_html @ad.description %></p>
 	</div>
 </div>
 <!-- /.card -->
