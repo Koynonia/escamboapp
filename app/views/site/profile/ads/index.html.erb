@@ -15,7 +15,7 @@
 		<tr>
 			<th scope="row"><%= ad.id %></th>
 			<td><%= image_tag ad.picture(:thumb) %></td>
-			<td align='justify'><%= ad.description %></td>
+			<td align='justify'><%= ad.description_short %></td>
 			<td><b><%= humanized_money_with_symbol ad.price %></b></td>
 			<td>
 				<%= link_to edit_site_profile_ad_path(ad), class: "btn btn-primary btn-sm" do %>
