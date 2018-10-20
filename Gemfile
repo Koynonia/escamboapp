@@ -23,6 +23,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
   # Animate CSS
   gem 'rails-assets-animate-css'
+  # Bootstrap Markdown
+  gem 'rails-assets-bootstrap-markdown'
+  # Marked
+  gem 'rails-assets-marked'
 end
 
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form
