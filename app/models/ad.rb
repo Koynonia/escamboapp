@@ -2,9 +2,9 @@ class Ad < ActiveRecord::Base
   # Callbacks
   before_save :md_to_html
 
-  #Asocitions
-  belongs_to :category
+  #Associations
   belongs_to :member
+  belongs_to :category, counter_cache: true
 
   #Validates
   validates :title, 
