@@ -8,6 +8,8 @@
     destroy: Apagar
     update: Atualizar
     back: Voltar
+    go: ir
+    search: Pesquisar
     home: Início
     log_in: Entrar
     send_message: Enviar mensagem
