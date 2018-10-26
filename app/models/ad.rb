@@ -17,7 +17,8 @@ class Ad < ActiveRecord::Base
   validates :price, numericality: { greater_than: 0 }
 
   # Scopes
-  scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, ->(quantity = 10, page = 1) { limit(quantity).order(created_at: :desc).page(page).per(6) }
+  scope :search, ->(term, page = 1) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(6) }
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id) { where(category: id) }
 
