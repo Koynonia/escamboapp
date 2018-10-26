@@ -13,9 +13,13 @@
 
 <div class="card card-outline-secondary my-4" style="padding-top: 50px;">
 	<div class="card-header">
-		<a href="#" class="btn btn-success pull-right">Leave a Review</a>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#commentModal">
+			<%= t('buttons.comment') %>
+		</button>
 		<h4 style="padding-bottom: 35px;">Product Reviews</h4>
 	</div>
+
 	<div class="card-body">
 		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
 		4.0 stars
@@ -34,4 +38,22 @@
 		<hr>
 	</div>
 </div>
-<!-- /.card -->
+
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal"><%= t('buttons.close') %></button>
+				<button type="button" class="btn btn-primary"><%= t('buttons.save') %></button>
+			</div>
+		</div>
+	</div>
+</div>
