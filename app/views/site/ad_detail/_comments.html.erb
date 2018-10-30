@@ -1,0 +1,17 @@
+<% @ad.comments.each do |comment| %>
+
+<div class="card-body">
+	<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+	4.0 stars
+	<p><%= comment.body %></p>
+	<small class="text-muted">
+		<%= t('labels.posted_by') %>
+		<%= comment.member.email %>
+		<%= t('labels.posted_on') %>
+		<%= l comment.created_at %>
+
+	</small>
+	<hr>
+</div>
+
+<% end %>
