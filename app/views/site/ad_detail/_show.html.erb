@@ -4,8 +4,7 @@
 	<div class="card-body">
 		<h3 align="right"><%= humanized_money_with_symbol @ad.price %></h3>
 		<h3 class="card-title" style="padding-top: 10px;"><%= @ad.title %></h3>
-		<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-		4.0 stars
+		<%= rating_for @ad, 'quality', disable_after_rate: true %>
 		<p class="card-text" style="padding-top: 30px;"><%= @ad.description.html_safe %></p>
 	</div>
 </div>
