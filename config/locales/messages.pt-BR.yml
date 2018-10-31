@@ -17,3 +17,5 @@
     email_not_delivered: Erro ao enviar email. Tente novamente
     email_subject_update: Seus dados foram alterados!
     email_message_update: Seus dados foram atualizados por %{item}.
+    comment_add: Comentário adicionado!
+    comment_error: Erro ao adicionar comentário!

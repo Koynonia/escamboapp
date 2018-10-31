@@ -14,4 +14,5 @@
     home: Início
     log_in: Entrar
     send_message: Enviar mensagem
-    comment: Deixe um comentário
+    comment_leave: Deixe um comentário
+    comment_login: Efetue login para comentar
