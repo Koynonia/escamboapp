@@ -12,15 +12,22 @@
 
 <div class="card card-outline-secondary my-4" style="padding-top: 50px;">
 	<div class="card-header">
+
 		<!-- Button trigger modal -->
+		<p class="pull-right">
 		<% if member_signed_in? %>
-			<button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#commentModal">
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">
 				<%= t('buttons.comment_leave') %>
 			</button>
 		<% else %>
-				<%= link_to t('buttons.comment_login'), new_member_session_path, class: "btn btn-success pull-right" %>
+				<%= link_to t('buttons.comment_login'), new_member_session_path, class: "btn btn-success" %>
 		<% end %>
+		</p>
+
+		<p>
 		<h4 style="padding-bottom: 35px;"><%= @ad.comments.count %> <%= t('labels.comments') %></h4>
+		</p>
+		
 	</div>
 	<!-- /.comments -->
 	<%= render partial: 'site/ad_detail/comments' %>

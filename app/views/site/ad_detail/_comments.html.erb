@@ -9,8 +9,8 @@
 		<%#= rating_for_user @ad, comment.member, 'quality', disable_after_rate: true %>
 		<%= t('labels.posted_by') %>
 		<%= comment.member.email %>
-		<%= t('labels.posted_on') %>
-		<%= l comment.created_at %>
+		(<%= t('labels.posted_on') %>
+		<%= time_ago_in_words(comment.created_at) %>)
 	</small>
 	<br><br>
 	<p><%= comment.body %></p>
