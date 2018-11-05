@@ -18,11 +18,9 @@
 				<%= t('buttons.comment_leave') %>
 			</button>
 		<% else %>
-			<button type="button" class="btn btn-success pull-right" disabled="disabled" data-toggle="modal" data-target="#commentModal">
-				<%= t('buttons.comment_login') %>
-			</button>
+				<%= link_to t('buttons.comment_login'), new_member_session_path, class: "btn btn-success pull-right" %>
 		<% end %>
-		<h4 style="padding-bottom: 35px;"><%= t('labels.reviews') %></h4>
+		<h4 style="padding-bottom: 35px;"><%= @ad.comments.count %> <%= t('labels.comments') %></h4>
 	</div>
 	<!-- /.comments -->
 	<%= render partial: 'site/ad_detail/comments' %>
