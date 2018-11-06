@@ -20,12 +20,12 @@
 				<%= t('buttons.comment_leave') %>
 			</button>
 		<% else %>
-				<%= link_to t('buttons.comment_login'), new_member_session_path, class: "btn btn-success" %>
+				<%= link_to t('buttons.login_to_comment'), new_member_session_path, class: "btn btn-success" %>
 		<% end %>
 		</p>
 
 		<p>
-		<h4 style="padding-bottom: 35px;"><%= @ad.comments.count %> <%= t('labels.comments') %></h4>
+		<h4 style="padding-bottom: 35px;"><%= @ad.rates('quality').count %> <%= t('labels.reviews') %></h4>
 		</p>
 		
 	</div>
