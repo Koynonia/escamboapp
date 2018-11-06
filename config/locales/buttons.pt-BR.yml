@@ -12,7 +12,10 @@
     close: Fechar
     search: Pesquisar
     home: Início
-    log_in: Entrar
+    login: Login
     send_message: Enviar mensagem
     comment_leave: Deixe um comentário
-    comment_login: Efetue login para comentar
+    login_to_comment: Efetue login para comentar
+    sign_in_with_facebook: Login com Facebook
+    sign_up: Cadastrar
+    sign_up_with_facebook: Cadastrar com Facebook

@@ -7,8 +7,9 @@
     dont_have_an_account: Não tem uma conta?
     sign_up: Cadastre-se
     sign_up_here: Cadastre-se aqui!
-    sign_in_with_facebook: Login com Facebook
+    or: ou
     enter: Entrar
+    name: Nome
     email: E-mail
     password: Senha
     message: Mensagem
@@ -20,7 +21,6 @@
     comment: Comentário
     comments: comentários
     reviews: Avaliações
-    login_to_comment: Efetue login para comentar
     posted_by: Postado por
     posted_on: postado a
     er_diagram: Diagrama ER
