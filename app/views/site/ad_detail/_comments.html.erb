@@ -3,10 +3,11 @@
 <div class="card-body">
 	<% if (current_member) && (comment.member.id == current_member.id) %>
 		<%= rating_for_user @ad, current_member, 'quality' %>
+	<% else %>
+		<%= rating_for_user @ad, comment.member, 'quality', disable_after_rate: true %>
 	<% end %>
 	
 	<small class="text-muted">
-		<%#= rating_for_user @ad, comment.member, 'quality', disable_after_rate: true %>
 		<%= t('labels.posted_by') %>
 		<%= comment.member.email %>
 		(<%= t('labels.posted_on') %>
