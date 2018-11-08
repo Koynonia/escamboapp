@@ -41,7 +41,7 @@
           <div class="col-sm-12 controls">
             <%= f.submit "#{t('buttons.login')}", class: "btn btn-success" %>
             <span style="margin-left:8px; margin-right:8px;"><%= t('labels.or') %></span>
-            <a id="btn-fblogin" href="#" class="btn btn-primary"><%= t('buttons.sign_in_with_facebook') %></a>
+            <a id="btn-fblogin" href="#" class="btn btn-primary" disabled="disabled"><%= t('buttons.sign_in_with_facebook') %></a>
 
           </div>
         </div>
@@ -74,14 +74,6 @@
       </div>  
       <div class="panel-body" >
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
-          
-          <!--Error Msg -->
-          <% unless devise_error_messages!.blank? %>
-            <div id="signupalert" class="alert alert-danger">
-              <p><%= devise_error_messages! %></p>
-              <span></span>
-            </div>
-          <% end %>
 
           <div class="form-group">
             <%= f.label :email, class: "col-md-3 control-label" %>
@@ -123,11 +115,11 @@
           <div class="form-group">
             <!-- Button -->                                        
             <div class="col-md-offset-3 col-md-9">
-              <%= f.submit "Sign up", class: "btn btn-info" do %>
-                <i class="icon-hand-right"></i> &nbsp <%= t('buttons.sign_up') %>
+              <%= f.submit (t('buttons.sign_up')), class: "btn btn-info" do %>
+                <i class="icon-hand-right"></i> &nbsp Sign Up
               <% end %>
               <span style="margin-left:8px; margin-right:8px;"><%= t('labels.or') %></span>  
-              <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   <%= t('buttons.sign_up_with_facebook') %></button>
+              <button id="btn-fbsignup" type="button" class="btn btn-primary" disabled="disabled"><i class="icon-facebook"></i>   <%= t('buttons.sign_up_with_facebook') %></button>
             </div>
           </div>
         <% end %>
@@ -136,3 +128,13 @@
     </div>
   </div> 
 </div>
+
+<% flash.each do |key, value| %>
+  <%= javascript_tag "$.notify( { message: '#{value}'}, { type: 'danger', placement: { from: 'top', align: 'center' }});" %>
+<% end %>
+
+<% unless devise_error_messages!.blank? %>
+  <% resource.errors.full_messages.each do |message| %>
+      <%= javascript_tag "$.notify( { message: '#{message}'}, { type: 'danger', placement: { from: 'top', align: 'center' }});" %>
+  <% end %>
+<% end %>
