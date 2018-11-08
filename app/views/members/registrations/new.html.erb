@@ -91,12 +91,21 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <%= f.label :name, class: "col-md-3 control-label" %>
-            <div class="col-md-9">
-              <input type="text" class="form-control" name="firstname" placeholder="First Name">
+          <%= f.fields_for :profile_member do |profile_member| %>
+            <div class="form-group">
+              <%= f.label :first_name, class: "col-md-3 control-label" %>
+              <div class="col-md-9">
+                <%= profile_member.text_field :first_name, class: "form-control", placeholder: t('placeholder.first_name') %>
+              </div>
             </div>
-          </div>
+
+            <div class="form-group">
+              <%= f.label :second_name, class: "col-md-3 control-label" %>
+              <div class="col-md-9">
+                <%= profile_member.text_field :second_name, class: "form-control", placeholder: t('placeholder.second_name') %>
+              </div>
+            </div>
+          <% end %>
 
           <div class="form-group">
             <%= f.label :password, class: "col-md-3 control-label" %>
@@ -108,7 +117,7 @@
           <div class="form-group">
             <%= f.label :password_confirmation, class: "col-md-3 control-label" %>
             <div class="col-md-9">
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: t('placeholder.password') %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: t('placeholder.password_confirm') %>
             </div>
           </div>
 
