@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "[+] CATEGORIAS         |  Cadastrando..."
+
 categories = [
 	"Animais e acessórios", 
 	"Esportes", 
@@ -22,9 +23,11 @@ categories = [
 	categories.each do |category|
 		Category.friendly.find_or_create_by(description:category)
 	end
+
 puts "[!] CATEGORIAS         |  ==> Sucesso!"
 
 puts "[+] ADM. PADRÃO        |  Cadastrando..."
+
 Admin.create!(
 	name: "Admnistrador Geral",
 	email: "admin@admin.com", 
@@ -32,13 +35,22 @@ Admin.create!(
 	password_confirmation: "123456", 
 	role:0
 	)
+
 puts "[!] ADM. PADRÃO        |  ==> Sucesso!"
 
 puts "[+] MEMBRO PADRÃO      |  Cadastrando..."
-Member.create!(
-	#name: "Membro Padrão",
-	email: "membro@membro.com", 
-	password: "123456",
-	password_confirmation: "123456"
-	)
+
+member = Member.new(
+		#name: "Membro Padrão",
+		email: "membro@membro.com", 
+		password: "123456",
+		password_confirmation: "123456"
+		)
+
+member.build_profile_member
+member.profile_member.first_name = Faker::Name.first_name
+member.profile_member.second_name = Faker::Name.last_name
+
+member.save!
+
 puts "[!] MEMBRO PADRÃO      |  ==> Sucesso!"
