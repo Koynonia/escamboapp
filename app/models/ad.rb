@@ -29,6 +29,7 @@ class Ad < ActiveRecord::Base
   scope :search, ->(term) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) }
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
+  scope :random, ->(qunatity) { limit(qunatity).order("RANDOM()") }
 
   # paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, 
@@ -37,6 +38,14 @@ class Ad < ActiveRecord::Base
 
   # gem money-rails
   monetize :price_cents
+
+  def second
+    self[1]
+  end
+
+  def third
+    self[2]
+  end
 
   private
 
