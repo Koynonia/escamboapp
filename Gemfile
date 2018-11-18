@@ -103,5 +103,23 @@ group :development do
   gem 'lerolero_generator'
   # A mini view framework for console/irb that's easy to use, even while under its influence. Console goodies include a no-wrap table, auto-pager, tree and menu. http://tagaholic.me/hirb/
   gem 'hirb'
+  # Remote multi-serve 
+  gem 'capistrano', '~> 3.7'
+  # Official Ruby on Rails specific tasks for Capistrano
+  gem 'capistrano-bundler', '~> 1.2'
+  # Bundler support for Capistrano 3.x
+  gem 'capistrano-rails', '~> 1.2'
+  # RVM support for Capistrano v3
+  gem 'capistrano-rvm'
+  # Unicorn for Capistrano v3
+  gem 'capistrano3-unicorn'
 end
 
+group :production do
+  # MySQL Adapter
+  gem 'mysql2', '~> 0.3.18'
+  # Use Unicorn as the app server
+  gem 'unicorn'
+  # Mailgun's Official Ruby Library
+  gem 'mailgun-ruby', '~>1.1.4'
+end

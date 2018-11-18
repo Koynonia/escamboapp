@@ -17,6 +17,9 @@
 !/log/.keep
 /tmp
 
+# Ignore database configuration
+config/databse.yml
+
 # Ignore all .DS_Store files (Mac)
 *.DS_Store
 /.gtm/
