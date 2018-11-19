@@ -13,6 +13,12 @@ gem 'devise'
 gem 'devise-i18n'
 # Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
+# A library for generating fake data such names, addresses, and phones numbers
+gem 'faker'
+# O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+gem 'lerolero_generator'
+# Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
 
 source 'https://rails-assets.org' do
 	# https://github.com/twbs/bootstrap
@@ -93,14 +99,8 @@ group :development do
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # A library for generating fake data such names, addresses, and phones numbers
-  gem 'faker'
-  # Markdown Lorem Ipsum generator
-  gem 'doctor_ipsum'
   # Catches mail and serves it through a dream.
   gem 'mailcatcher'
-  # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
-  gem 'lerolero_generator'
   # A mini view framework for console/irb that's easy to use, even while under its influence. Console goodies include a no-wrap table, auto-pager, tree and menu. http://tagaholic.me/hirb/
   gem 'hirb'
   # Remote multi-serve 

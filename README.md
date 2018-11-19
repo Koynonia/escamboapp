@@ -1,7 +1,9 @@
-# Exemplo de desenolvimento de uma aplicação Ruby on Rails
+# Exemplo de uma aplicação Ruby on Rails
 
 ## EscamboAPP
 Este exemplo foi desenvolvido usando a versão 4.2.5 do Rails sobre o Ruby 2.3.7
+
+Detalhes podem ser consultados no [WIKI](https://bitbucket.org/dev-rubyonrails/escamboapp/wiki/) do projeto.
 
 
 
@@ -12,12 +14,14 @@ Este exemplo foi desenvolvido usando a versão 4.2.5 do Rails sobre o Ruby 2.3.7
 - Rails 4.2.5
 
 - ImageMagick (https://www.imagemagick.org)
+
    ```
    sudo apt-get update
    sudo apt-get install imagemagick libmagickwand-de
    ```
    
  - Graphviz (https://www.graphviz.org) - Apenas para Ambiente de Desenvolvimento
+
     ```
      sudo apt-get update
      sudo apt-get install graphviz
