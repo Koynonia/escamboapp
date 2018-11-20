@@ -29,14 +29,14 @@ class Ad < ActiveRecord::Base
   scope :search, ->(term) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) }
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
-  scope :random, ->(qunatity) { 
-    Rails.env.production?
-      limit(qunatity).order("RAND()") # MySQL
+  
+  scope :random, ->(quantity) {
+    if Rails.env.production?
+      limit(quantity).order("RAND()") # MySQL
     else
-      limit(qunatity).order("RANDOM()") # SQLite
-    end
-  }
-  scope :random, ->(qunatity) { limit(qunatity).order("RANDOM()") }
+      limit(quantity).order("RANDOM()") # SQLite
+     end
+   }
 
   # paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, 
