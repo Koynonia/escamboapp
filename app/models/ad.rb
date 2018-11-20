@@ -29,6 +29,13 @@ class Ad < ActiveRecord::Base
   scope :search, ->(term) { where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) }
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
+  scope :random, ->(qunatity) { 
+    Rails.env.production?
+      limit(qunatity).order("RAND()") # MySQL
+    else
+      limit(qunatity).order("RANDOM()") # SQLite
+    end
+  }
   scope :random, ->(qunatity) { limit(qunatity).order("RANDOM()") }
 
   # paperclip
