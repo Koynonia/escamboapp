@@ -13,9 +13,11 @@
     search: Pesquisar
     home: Início
     login: Entrar
+    buy: Comprar
     send_message: Enviar mensagem
     comment_leave: Deixe um comentário
     login_to_comment: Efetue login para comentar
+    login_to_buy: Efetue login para comprar
     sign_in_with_facebook: Entrar com Facebook
     sign_up: Cadastrar
     sign_up_with_facebook: Cadastrar com Facebook

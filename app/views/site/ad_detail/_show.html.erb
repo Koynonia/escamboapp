@@ -3,10 +3,19 @@
 	
 	<div class="card-body">
 		<h3 align="right"><%= humanized_money_with_symbol @ad.price %></h3>
-		<h3 class="card-title" style="padding-top: 10px;"><%= @ad.title %></h3>
-		<%= rating_for @ad, 'quality', star_path: '/images/ratyrate', disable_after_rate: true %>
-		<p class="card-text" style="padding-top: 30px;"><%= @ad.description.html_safe %></p>
-	</div>
+		<p class="pull-right">
+			<% if member_signed_in? %>
+			<%= link_to t('buttons.buy'), '#', class: "btn btn-success" %>
+		</button>
+		<% else %>
+		<%= link_to t('buttons.login_to_buy'), new_member_session_path, class: "btn btn-success" %>
+		<% end %>
+		</p>
+
+	<h3 class="card-title" style="padding-top: 10px;"><%= @ad.title %></h3>
+	<%= rating_for @ad, 'quality', star_path: '/images/ratyrate', disable_after_rate: true %>
+	<p class="card-text" style="padding-top: 30px;"><%= @ad.description.html_safe %></p>
+</div>
 </div>
 <!-- /.card -->
 
@@ -15,17 +24,17 @@
 
 		<!-- Button trigger modal -->
 		<p class="pull-right">
-		<% if member_signed_in? %>
+			<% if member_signed_in? %>
 			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">
 				<%= t('buttons.comment_leave') %>
 			</button>
-		<% else %>
-				<%= link_to t('buttons.login_to_comment'), new_member_session_path, class: "btn btn-success" %>
-		<% end %>
+			<% else %>
+			<%= link_to t('buttons.login_to_comment'), new_member_session_path, class: "btn btn-success" %>
+			<% end %>
 		</p>
 
 		<p>
-		<h4 style="padding-bottom: 35px;"><%= @ad.rates('quality').count %> <%= t('labels.reviews') %></h4>
+			<h4 style="padding-bottom: 35px;"><%= @ad.rates('quality').count %> <%= t('labels.reviews') %></h4>
 		</p>
 		
 	</div>
