@@ -20,3 +20,4 @@
     comment_add: Comentário adicionado!
     comment_error: Erro ao adicionar comentário!
     error_nested_attributes: É necessário prencher os campos Nome e Sobrenome!
+    confirm_buy: Deseja realmente comprar este produto?
