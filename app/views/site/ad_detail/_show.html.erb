@@ -4,18 +4,23 @@
 	<div class="card-body">
 		<h3 align="right"><%= humanized_money_with_symbol @ad.price %></h3>
 		<p class="pull-right">
-			<div class="text-right">
+			
+			<% if @ad.active? %>
 				<% if member_signed_in? %>
-					<%= form_tag(checkout_payments_path) do %>
-					<%= hidden_field_tag :ad_id, @ad.id %>
-					<%= submit_tag t('buttons.buy'), class: "btn btn-success", data: { confirm: t('messages.confirm_buy') } %>
+					<div class="text-right">
+						<%= form_tag(checkout_payments_path) do %>
+						<%= hidden_field_tag :ad_id, @ad.id %>
+						<%= submit_tag t('buttons.buy'), class: "btn btn-success", data: { confirm: t('messages.confirm_buy') } %>
+					<% end %>
+					</div>
+				<% else %>
+					<%= link_to t('buttons.login_to_buy'), new_member_session_path, class: "btn btn-success" %>
 				<% end %>
-			</div>
 			<% else %>
-			<%= link_to t('buttons.login_to_buy'), new_member_session_path, class: "btn btn-success" %>
+				<%= link_to "#{@ad.status_i18n}", '#', class: "btn btn-success", disabled:true %>
 			<% end %>
-		</p>
 
+		</p>
 		<h3 class="card-title" style="padding-top: 10px;"><%= @ad.title %></h3>
 		<%= rating_for @ad, 'quality', star_path: '/images/ratyrate', disable_after_rate: true %>
 		<p class="card-text" style="padding-top: 30px;"><%= @ad.description.html_safe %></p>
