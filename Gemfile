@@ -19,6 +19,8 @@ gem 'faker'
 gem 'lerolero_generator'
 # Markdown Lorem Ipsum generator
 gem 'doctor_ipsum'
+# Biblioteca de integração em Ruby para o Pagseguro
+gem "pagseguro-oficial", "~> 2.5.0"
 
 source 'https://rails-assets.org' do
 	# https://github.com/twbs/bootstrap
