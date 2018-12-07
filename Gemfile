@@ -94,6 +94,8 @@ group :development, :test do
   gem "binding_of_caller"
   # Generate Entity-Relationship Diagrams
   gem 'rails-erd'
+  # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+  gem 'rack-cors', :require => 'rack/cors'
 end
 
 group :development do

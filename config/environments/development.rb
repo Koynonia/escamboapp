@@ -1,6 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Rack CORS configuration
+  config.middleware.insert_before 0, "Rack::Cors" do
+    allow do
+      origins '*'
+      resource '*', headers: :any, methods: [:get, :post, :options]
+    end
+  end
+  
   # Better Errors Config
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
 
@@ -13,7 +21,7 @@ Rails.application.configure do
   # Mailcatcher Config:
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
- 
+  
  #Foreman Show Out
  $stdout.sync = true
 
